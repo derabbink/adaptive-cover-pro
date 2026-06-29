@@ -26,6 +26,8 @@ from ..const import (
     CONF_LENGTH_AWNING,
     CONF_MAX_TILT,
     CONF_MIN_TILT,
+    CONF_TILT_ANGLE_0,
+    CONF_TILT_ANGLE_100,
     CONF_SILL_HEIGHT,
     CONF_TILT_DEPTH,
     CONF_TILT_DISTANCE,
@@ -36,6 +38,8 @@ from ..const import (
     DEFAULT_GLARE_ZONE_Z,
     DEFAULT_MAX_TILT,
     DEFAULT_MIN_TILT,
+    DEFAULT_TILT_ANGLE_0,
+    DEFAULT_TILT_ANGLE_100,
     DEFAULT_WINDOW_HEIGHT,
 )
 
@@ -142,6 +146,8 @@ class ConfigurationService:
             slat_distance=distance / 100,  # Convert cm to meters
             depth=depth / 100,  # Convert cm to meters
             mode=options.get(CONF_TILT_MODE),
+            angle_0=options.get(CONF_TILT_ANGLE_0, DEFAULT_TILT_ANGLE_0),
+            angle_100=options.get(CONF_TILT_ANGLE_100, DEFAULT_TILT_ANGLE_100),
             max_tilt=options.get(CONF_MAX_TILT, DEFAULT_MAX_TILT),
             min_tilt=options.get(CONF_MIN_TILT, DEFAULT_MIN_TILT),
         )
